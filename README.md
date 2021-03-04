@@ -71,4 +71,64 @@
    
 7. Выведите в консоль все файлы, где упоминается последовательность ```boost::asio```.
 
-   Команда: 
+   Команда: ```grep -rnw ./ -e boost::asio```
+   
+   Вывод(его часть): 
+   ```
+   ./boost/process/detail/posix/sigchld_service.hpp:19:class sigchld_service : public boost::asio::detail::service_base<sigchld_service>
+   ./boost/process/detail/posix/sigchld_service.hpp:21:    boost::asio::io_context::strand _strand{get_io_context()};
+   ./boost/process/detail/posix/sigchld_service.hpp:22:    boost::asio::signal_set _signal_set{get_io_context(), SIGCHLD};
+   ./boost/process/detail/posix/sigchld_service.hpp:27:    sigchld_service(boost::asio::io_context & io_context)
+   ./boost/process/detail/posix/sigchld_service.hpp:28:        : boost::asio::detail::service_base<sigchld_service>(io_context)
+   ```
+
+8. Скомпилирутйе *boost*. Можно воспользоваться инструкцией или ссылкой.
+
+   Команда: ```./bootstrap.sh --prefix=boost_output```
+   
+   Вывод:
+   ```
+   error: unrecognized option: --prefix=boost_output
+   Try `./bootstrap.sh --help' for more information.
+   ```
+
+9. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ```~/boost-libs```. 
+
+   Команда: ```mkdir -p ./boost-libs```
+   
+10. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
+
+   Команда: ```du -a -h```
+   
+   Вывод (его часть):
+   ```
+   0K	./doc/src/architecture.adoc
+   4,0K	./doc/src/typed-target.adoc
+   16K	./doc/src/faq.adoc
+   28K	./doc/src/tasks.adoc
+   56K	./doc/src/reference.adoc
+   4,0K	./doc/src/hljs/styles/github.min.css
+   8,0K	./doc/src/hljs/styles
+   16K	./doc/src/hljs/highlight.min.js
+   28K	./doc/src/hljs
+   4,0K	./doc/src/abstract-target.adoc
+   76K	./doc/src/bjam.adoc
+   ```
+   
+11. Найдите топ10 самых "тяжёлых".
+   
+   Команда:  ```du -Sh | sort -rh| head -10```
+   
+   Вывод:
+   ```
+   2,5M	./src/engine/boehm_gc
+   1,3M	./src/tools
+   1,3M	./src/engine
+   1,1M	./test
+   764K	./src/build
+   656K	./doc/html
+   476K	./src/engine/boehm_gc/doc
+   380K	./doc/src
+   268K	./src/util
+   236K	./src/engine/boehm_gc/include/private
+   ```
