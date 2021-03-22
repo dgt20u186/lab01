@@ -51,8 +51,8 @@
    
 4. Подсчитайте количество файлов в директории ~/boost_1_69_0 не включая вложенные директории.
 
-   Кол-во файлов: 12.
-   
+   Кол-во файлов: 12.   
+
 5. Подсчитайте количество заголовочных файлов, файлов с расширением .cpp, сколько остальных файлов (не заголовочных и не .cpp).
 
    Команда 1: ```$ find . -type f -name "*.h" | wc -l```
@@ -131,37 +131,37 @@
 
 10. Подсчитайте сколько занимает дискового пространства каждый файл в этой директории.
 
-   Команда: ```du -a -h```
+    Команда: ```du -a -h```
 
-   Вывод (его часть):
-   ```
-   0K	./doc/src/architecture.adoc
-   4,0K	./doc/src/typed-target.adoc
-   16K	./doc/src/faq.adoc
-   28K	./doc/src/tasks.adoc
-   56K	./doc/src/reference.adoc
-   4,0K	./doc/src/hljs/styles/github.min.css
-   8,0K	./doc/src/hljs/styles
-   16K	./doc/src/hljs/highlight.min.js
-   28K	./doc/src/hljs
-   4,0K	./doc/src/abstract-target.adoc
-   76K	./doc/src/bjam.adoc
-   ```
+    Вывод (его часть):
+    ```
+    0K	./doc/src/architecture.adoc
+    4,0K	./doc/src/typed-target.adoc
+    16K	./doc/src/faq.adoc
+    28K	./doc/src/tasks.adoc
+    56K	./doc/src/reference.adoc
+    4,0K	./doc/src/hljs/styles/github.min.css
+    8,0K	./doc/src/hljs/styles
+    16K	./doc/src/hljs/highlight.min.js
+    28K	./doc/src/hljs
+    4,0K	./doc/src/abstract-target.adoc
+    76K	./doc/src/bjam.adoc
+    ```
    
 11. Найдите топ10 самых "тяжёлых".
    
-   Команда:  ```du -Sh | sort -rh| head -10```
+    Команда:  ```du -Sh | sort -rh| head -10```
    
-   Вывод:
-   ```
-   2,5M	./src/engine/boehm_gc
-   1,3M	./src/tools
-   1,3M	./src/engine
-   1,1M	./test
-   764K	./src/build
-   656K	./doc/html
-   476K	./src/engine/boehm_gc/doc
-   380K	./doc/src
-   268K	./src/util
-   236K	./src/engine/boehm_gc/include/private
-   ```
+    Вывод:
+    ```
+    2,5M	./src/engine/boehm_gc
+    1,3M	./src/tools
+    1,3M	./src/engine
+    1,1M	./test
+    764K	./src/build
+    656K	./doc/html
+    476K	./src/engine/boehm_gc/doc
+    380K	./doc/src
+    268K	./src/util
+    236K	./src/engine/boehm_gc/include/private
+    ```
