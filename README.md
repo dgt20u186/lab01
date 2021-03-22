@@ -84,12 +84,44 @@
 
 8. Скомпилирутйе *boost*. Можно воспользоваться инструкцией или ссылкой.
 
-   Команда: ```./bootstrap.sh --prefix=boost_output```
+   Команда 1: ```./b2 install --prefix=~/boost_1_69_0/```
    
-   Вывод:
+   Вывод(фрагмент):
    ```
-   error: unrecognized option: --prefix=boost_output
-   Try `./bootstrap.sh --help' for more information.
+   warning: No toolsets are configured.
+   warning: Configuring default toolset "gcc".
+   warning: If the default is wrong, your build may not work correctly.
+   warning: Use the "toolset=xxxxx" option to override our guess.
+   warning: For more configuration options, please consult
+   warning: http://boost.org/boost-build2/doc/html/bbv2/advanced/configuration.html
+   ...found 823 targets...
+   ...updating 438 targets...
+   common.copy ~/boost_1_69_0/share/boost-build/src/build/property-set.jam
+   common.copy ~/boost_1_69_0/share/boost-build/src/build/project.py
+   common.copy ~/boost_1_69_0/share/boost-build/src/build/project.jam
+   common.copy ~/boost_1_69_0/share/boost-build/src/build/generators.py
+   common.copy ~/boost_1_69_0/share/boost-build/src/build/generators.jam
+   common.copy ~/boost_1_69_0/share/boost-build/src/build/feature.py
+   ```
+   
+   Команда 2: ```./b2 install --prefix=~/boost_1_69_0/bin```
+   
+   Вывод(фрагмент):
+   ```
+   warning: No toolsets are configured.
+   warning: Configuring default toolset "gcc".
+   warning: If the default is wrong, your build may not work correctly.
+   warning: Use the "toolset=xxxxx" option to override our guess.
+   warning: For more configuration options, please consult
+   warning: http://boost.org/boost-build2/doc/html/bbv2/advanced/configuration.html
+   ...found 824 targets...
+   ...updating 436 targets...
+   common.copy ~/boost_1_69_0/bin/share/boost-build/src/build/property-set.jam
+   common.copy ~/boost_1_69_0/bin/share/boost-build/src/build/project.py
+   common.copy ~/boost_1_69_0/bin/share/boost-build/src/build/project.jam  
+   common.copy ~/boost_1_69_0/bin/share/boost-build/src/build/generators.py
+   common.copy ~/boost_1_69_0/bin/share/boost-build/src/build/generators.jam
+   common.copy ~/boost_1_69_0/bin/share/boost-build/src/build/feature.py
    ```
 
 9. Перенесите все скомпилированные на предыдущем шаге статические библиотеки в директорию ```~/boost-libs```. 
