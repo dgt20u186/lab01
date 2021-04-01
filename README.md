@@ -39,15 +39,15 @@
 
    Команда: ```$ tar -xf boost_1_69_0.tar.gz```.
    
-3. Подсчитайте количество файлов в директории ~/boost_1_69_0 не включая вложенные директории.
+3. Подсчитайте количество файлов в директории ~/boost_1_69_0 включая вложенные директории.
 
-   Команда: ```$ ls -l | wc```
+   Команда: ```$ find ./ | wc```
 
    Вывод:
-   ```     19     164    1211```
-   Поскольку ls выводит размер всех файлов в папке строкой total, то у нас 18 файлов.
+   ```67715   67718 3352333```
+   Поскольку ls выводит размер всех файлов в папке строкой total, то у нас 67714 файлов.
 
-   Кол-во файлов: 18.
+   Кол-во файлов: 67714.
    
 4. Подсчитайте количество файлов в директории ~/boost_1_69_0 не включая вложенные директории.
 
@@ -65,9 +65,22 @@
    
 6. Найдите полный пусть до файла ```any.hpp``` внутри библиотеки *boost*.
  
-   Команда: ```$ ls any.hpp```
+   Команда: ```$ find ./ -name "any.hpp"```
    
-   Вывод: ```any.hpp```
+   Вывод: 
+   ```
+   ./boost/proto/detail/any.hpp
+   ./boost/type_erasure/any.hpp
+   ./boost/spirit/home/support/algorithm/any.hpp
+   ./boost/xpressive/detail/utility/any.hpp
+   ./boost/fusion/include/any.hpp
+   ./boost/fusion/algorithm/query/any.hpp
+   ./boost/fusion/algorithm/query/detail/any.hpp
+   ./boost/any.hpp
+   ./boost/hana/fwd/any.hpp
+   ./boost/hana/any.hpp
+
+   ```
    
 7. Выведите в консоль все файлы, где упоминается последовательность ```boost::asio```.
 
